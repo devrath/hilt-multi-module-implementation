@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="inappreview/src/main/res/layout/fragment_in_app_review_prompt.xml" value="0.25" />
         <entry key="styles/src/main/res/drawable/bg_caption_white.xml" value="0.1" />
         <entry key="styles/src/main/res/drawable/bg_overline_raised.xml" value="0.1" />

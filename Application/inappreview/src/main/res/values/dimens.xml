@@ -14,4 +14,5 @@
   <dimen name="ratePromptWidth">300dp</dimen>
   <dimen name="ratePromptHeight">350dp</dimen>
   <dimen name="buttonMarginTop">12dp</dimen>
+    <dimen name="img_parm">230dp</dimen>
 </resources>

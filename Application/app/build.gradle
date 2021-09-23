@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation project(':inappreview')
+    implementation project(':styles')
 
     implementation "androidx.core:core-ktx:${versions.coreKtx}"
     implementation "androidx.appcompat:appcompat:${versions.appCompat}"

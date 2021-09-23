@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="inappreview/src/main/res/layout/fragment_in_app_review_prompt.xml" value="0.25" />
+        <entry key="styles/src/main/res/drawable/bg_caption_white.xml" value="0.1" />
+        <entry key="styles/src/main/res/drawable/bg_overline_raised.xml" value="0.1" />
+        <entry key="styles/src/main/res/drawable/selector_radio_button_player_settings.xml" value="0.1" />
+        <entry key="styles/src/main/res/font/roboto.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

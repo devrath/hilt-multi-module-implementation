@@ -7,7 +7,11 @@
         <entry key="styles/src/main/res/drawable/bg_caption_white.xml" value="0.1" />
         <entry key="styles/src/main/res/drawable/bg_overline_raised.xml" value="0.1" />
         <entry key="styles/src/main/res/drawable/selector_radio_button_player_settings.xml" value="0.1" />
+        <entry key="styles/src/main/res/font/bitter.xml" value="0.1" />
+        <entry key="styles/src/main/res/font/bitter_bold.xml" value="0.1" />
         <entry key="styles/src/main/res/font/roboto.xml" value="0.1" />
+        <entry key="styles/src/main/res/font/roboto_bold.xml" value="0.1" />
+        <entry key="styles/src/main/res/font/roboto_medium.xml" value="0.1" />
       </map>
     </option>
   </component>

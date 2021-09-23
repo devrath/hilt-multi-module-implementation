@@ -10,3 +10,4 @@ rootProject.name = "code"
 include ':app'
 include ':inappreview'
 include ':styles'
+include ':preferences'

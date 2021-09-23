@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
@@ -9,13 +9,13 @@ android {
     compileSdk versions.compileSdk
 
     defaultConfig {
-        applicationId "com.inappreview.code"
         minSdk versions.minSdk
         targetSdk versions.targetSdk
         versionCode versions.versionCode
         versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -34,21 +34,11 @@ android {
 }
 
 dependencies {
-    implementation project(':inappreview')
-    implementation project(':styles')
-    implementation project(':preferences')
 
     implementation "androidx.core:core-ktx:${versions.coreKtx}"
     implementation "androidx.appcompat:appcompat:${versions.appCompat}"
-    implementation "com.google.android.material:material:${versions.materialDesign}"
-    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
-    testImplementation "junit:junit:${versions.junit}"
 
-    // Hilt
+    //Hilt
     implementation "com.google.dagger:hilt-android:${versions.hilt}"
     kapt "com.google.dagger:hilt-compiler:${versions.hilt}"
-
-    // Play core
-    implementation "com.google.android.play:core:${versions.playCore}"
-    implementation "com.google.android.play:core-ktx:${versions.playCoreKtx}"
 }

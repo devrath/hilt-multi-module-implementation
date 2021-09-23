@@ -17,6 +17,7 @@ abstract class InAppReviewBinds {
 
   /**
    * Provides Preferences wrapper.
+   * We pass the implementation as the parameter and return the interface of that
    * */
   @Binds
   @Singleton

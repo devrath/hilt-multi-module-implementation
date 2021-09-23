@@ -15,13 +15,22 @@ private const val KEY_IN_APP_REVIEW_PREFERENCES = "inAppReviewPreferences"
 
 /**
  * Provides In App Review Android-based dependencies.
+ * Module annotation represents that this is a module.
+ * This module is mound to the singleton component
  * */
 @Module
 @InstallIn(SingletonComponent::class)
 class InAppReviewProviders {
 
+  /*
+  Both the dependencies require context to create them and the hilt gets it from the
+  application context annotation, Hilt connects them to the app class and then builds
+  it using its context
+  */
+
   /**
    * Provides In App Review Preferences.
+   * Create the instance of shared preferences
    * */
   @Provides
   @Singleton
@@ -31,6 +40,7 @@ class InAppReviewProviders {
 
   /**
    * Provides Review Manager
+   * creates a instance of review manager
    * */
   @Provides
   @Singleton

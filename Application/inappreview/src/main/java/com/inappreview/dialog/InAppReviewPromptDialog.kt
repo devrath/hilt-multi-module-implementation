@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.inappreview.InAppReviewManager
+import com.inappreview.manager.InAppReviewManager
 import com.inappreview.inappreview.R
 import com.inappreview.inappreview.databinding.FragmentInAppReviewPromptBinding
 import com.inappreview.preferences.GeneralSettingsPrefs

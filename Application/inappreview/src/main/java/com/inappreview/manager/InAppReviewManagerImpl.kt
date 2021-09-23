@@ -1,4 +1,4 @@
-package com.inappreview
+package com.inappreview.manager
 
 import android.app.Activity
 import android.content.Context
@@ -9,7 +9,6 @@ import com.google.android.play.core.tasks.Task
 import com.inappreview.preferences.BuildConfig
 import com.inappreview.preferences.InAppReviewPreferences
 import dagger.hilt.android.qualifiers.ApplicationContext
-import java.lang.Math.abs
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 

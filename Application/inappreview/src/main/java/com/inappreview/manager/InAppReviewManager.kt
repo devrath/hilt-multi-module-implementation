@@ -1,4 +1,4 @@
-package com.inappreview
+package com.inappreview.manager
 
 import android.app.Activity
 

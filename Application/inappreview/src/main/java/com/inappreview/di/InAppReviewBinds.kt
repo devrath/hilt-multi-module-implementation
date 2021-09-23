@@ -1,7 +1,7 @@
 package com.inappreview.di
 
-import com.inappreview.InAppReviewManager
-import com.inappreview.InAppReviewManagerImpl
+import com.inappreview.manager.InAppReviewManager
+import com.inappreview.manager.InAppReviewManagerImpl
 import com.inappreview.preferences.InAppReviewPreferences
 import com.inappreview.preferences.InAppReviewPreferencesImpl
 import dagger.Binds

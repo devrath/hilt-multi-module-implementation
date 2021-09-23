@@ -3,7 +3,7 @@ package com.inappreview.code
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.inappreview.InAppReviewManager
+import com.inappreview.manager.InAppReviewManager
 import com.inappreview.InAppReviewView
 import com.inappreview.code.databinding.ActivityMainBinding
 import com.inappreview.dialog.InAppReviewPromptDialog

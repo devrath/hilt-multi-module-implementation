@@ -15,9 +15,9 @@
 
 | Contents |
 | -------- |
-| [About the project]() |
-| [Representation of flow]() |
-| [Output]() |
+| [About the project](https://github.com/devrath/android-in-app-review-engine/blob/main/README.md#about-the-project) |
+| [Representation of flow](https://github.com/devrath/android-in-app-review-engine/blob/main/README.md#representation-of-flow) |
+| [Output](https://github.com/devrath/android-in-app-review-engine/blob/main/README.md#output) |
 
 ## About the project
 

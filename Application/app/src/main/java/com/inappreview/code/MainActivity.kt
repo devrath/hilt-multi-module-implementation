@@ -2,7 +2,9 @@ package com.inappreview.code
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.inappreview.manager.InAppReviewManager
 import com.inappreview.InAppReviewView
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity(), InAppReviewView {
         setContentView(binding.root)
         viewModel.setInAppReviewView(this)
         setOnClickListener()
+        observeLiveData()
     }
 
     private fun setOnClickListener() {
@@ -39,6 +42,14 @@ class MainActivity : AppCompatActivity(), InAppReviewView {
                 val dataToSave = binding.editTextTextPersonName.text.toString()
                 viewModel.saveToDataStore(dataToSave)
             }
+        }
+    }
+
+    private fun observeLiveData() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.dataSaved.observe(this@MainActivity, {
+                binding.resultDisplayedTextId.text = it
+            })
         }
     }
 

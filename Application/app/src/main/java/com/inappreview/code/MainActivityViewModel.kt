@@ -1,5 +1,6 @@
 package com.inappreview.code
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.inappreview.InAppReviewView
 import com.inappreview.preferences.general.GeneralGeneralPrefsStoreImpl
@@ -10,6 +11,8 @@ import javax.inject.Inject
 class MainActivityViewModel @Inject constructor(
     private val generalGeneralPrefsStoreImpl : GeneralGeneralPrefsStoreImpl
 ): ViewModel() {
+
+    val dataSaved = MutableLiveData<String>()
 
     private lateinit var inAppReviewView: InAppReviewView
 
@@ -29,6 +32,7 @@ class MainActivityViewModel @Inject constructor(
 
     suspend fun saveToDataStore(dataToSave: String) {
         generalGeneralPrefsStoreImpl.saveString(dataToSave)
+        dataSaved.value = generalGeneralPrefsStoreImpl.getString().toString()
     }
 
 }

@@ -1,4 +1,4 @@
-# android-in-app-review-engine
+# hilt-multi-module-implementation
 ![Banner](https://github.com/devrath/android-in-app-review-engine/blob/main/assets/banner_new.png)
 
 

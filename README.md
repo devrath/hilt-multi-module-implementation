@@ -1,5 +1,5 @@
 # android-in-app-review-engine
-![Banner](https://github.com/devrath/android-in-app-review-engine/blob/main/assets/banner.png)
+![Banner](https://github.com/devrath/android-in-app-review-engine/blob/main/assets/banner_new.png)
 
 
 <p align="center">

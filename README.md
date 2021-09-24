@@ -20,6 +20,17 @@
 | [Output](https://github.com/devrath/android-in-app-review-engine/blob/main/README.md#output) |
 
 ## About the project
+* In this project we demonstrate the use of hilt in a multi module project. 
+* We have set up four modules including the app module.
+  * `App-Module` contains the screen that takes input string to save it to data store. 
+  *  `inappreview-module` contains the UI of the bottom sheet dialog and logic of in app review manager implementation in android.
+  *  `preferences-module` contains the `data store` to store the `key/value` pairs in android.
+  *  `styles-module` contains the common styles that is being re-used throught all the modules.
+* From the `App-Module` we call the UI and logic of review from `inappreview-module`.
+* In the `preferences-module` there is `general preferences` that is common to all the modules implemented using data store.
+* In the `inappreview-module`there is `module specific preferences` specific to that module.
+* Module objects are facilitated using the `hilt`.
+* The implementations are facilitated by a abstraction so that if needed, its easier to implement the `unit testing` in the project.
 
 
 ## Representation of flow

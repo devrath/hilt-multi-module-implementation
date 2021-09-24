@@ -87,7 +87,6 @@ class InAppReviewPromptDialog : BottomSheetDialogFragment(), CoroutineScope {
 
   private suspend fun onRateLaterTapped() {
     preferences.setUserChosenRateLater(true)
-    preferences.setRateLater(getLaterTime())
     dismissAllowingStateLoss()
   }
 

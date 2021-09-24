@@ -59,13 +59,6 @@ dependencies {
     implementation "com.google.dagger:hilt-android:${versions.hilt}"
     kapt "com.google.dagger:hilt-compiler:${versions.hilt}"
 
-
-    // Material Dialog Library
-    implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
-
-    // Material Design Library
-    implementation 'com.google.android.material:material:1.4.0'
-
     // Lottie Animation Library
-    implementation 'com.airbnb.android:lottie:3.6.1'
+    implementation "com.airbnb.android:lottie:${inAppLibVersions.lotteanim}"
 }

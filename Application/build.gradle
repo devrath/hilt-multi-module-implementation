@@ -27,6 +27,9 @@ buildscript {
             'datastorePreferences'        : '1.0.0',
     ]
 
+    ext.inAppLibVersions = [
+            'lotteanim'        : '3.7.0',
+    ]
 
 
     repositories {

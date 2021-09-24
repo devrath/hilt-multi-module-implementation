@@ -11,11 +11,20 @@ import androidx.fragment.app.DialogFragment
 import com.inappreview.manager.InAppReviewManager
 import com.inappreview.inappreview.R
 import com.inappreview.inappreview.databinding.FragmentInAppReviewPromptBinding
-import com.inappreview.preferences.GeneralSettingsPrefs
-import com.inappreview.preferences.InAppReviewPreferences
+import com.inappreview.preferences.InAppReviewPrefsStoreImpl
+import com.inappreview.preferences.general.GeneralGeneralPrefsStoreImpl
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import kotlin.coroutines.CoroutineContext
+import androidx.lifecycle.Lifecycle
+
+import androidx.annotation.NonNull
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 
 /**
@@ -25,13 +34,17 @@ import javax.inject.Inject
  * rate the app or if they asked to rate it later and enough time passed (a week).
  * */
 @AndroidEntryPoint
-class InAppReviewPromptDialog : DialogFragment() {
+class InAppReviewPromptDialog : DialogFragment(), CoroutineScope {
+
+  private val job = Job()
+  override val coroutineContext: CoroutineContext
+    get() = job + Dispatchers.Main
 
   @Inject
-  lateinit var preferences: InAppReviewPreferences
+  lateinit var preferences: InAppReviewPrefsStoreImpl
 
   @Inject
-  lateinit var generalSettingsPrefs: GeneralSettingsPrefs
+  lateinit var generalGeneralPrefsStoreImpl: GeneralGeneralPrefsStoreImpl
 
   @Inject
   lateinit var inAppReviewManager: InAppReviewManager
@@ -54,20 +67,24 @@ class InAppReviewPromptDialog : DialogFragment() {
     dialog?.setCanceledOnTouchOutside(false)
   }
 
-  private fun initListeners() {
-    val binding = binding ?: return
-
-    binding.leaveReview.setOnClickListener { onLeaveReviewTapped() }
-    binding.reviewLater.setOnClickListener { onRateLaterTapped() }
+  override fun onDestroy() {
+    super.onDestroy()
+    job.cancel()
   }
 
-  private fun onLeaveReviewTapped() {
+  private fun initListeners() {
+    val binding = binding ?: return
+    binding.leaveReview.setOnClickListener { lifecycleScope.launch { onLeaveReviewTapped() } }
+    binding.reviewLater.setOnClickListener { lifecycleScope.launch { onRateLaterTapped() } }
+  }
+
+  private suspend fun onLeaveReviewTapped() {
     preferences.setUserRatedApp(true)
     inAppReviewManager.startReview(requireActivity())
     dismissAllowingStateLoss()
   }
 
-  private fun onRateLaterTapped() {
+  private suspend fun onRateLaterTapped() {
     preferences.setUserChosenRateLater(true)
     preferences.setRateLater(getLaterTime())
     dismissAllowingStateLoss()
@@ -95,8 +112,12 @@ class InAppReviewPromptDialog : DialogFragment() {
    * If the user cancels the dialog, we process that as if they chose to "Rate Later".
    * */
   override fun onCancel(dialog: DialogInterface) {
-    preferences.setUserChosenRateLater(true)
-    preferences.setRateLater(getLaterTime())
+    lifecycleScope.launch {
+      preferences.apply {
+       setUserChosenRateLater(true)
+       setRateLater(getLaterTime())
+      }
+    }
     super.onCancel(dialog)
   }
 

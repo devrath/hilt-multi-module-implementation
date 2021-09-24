@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.inappreview.InAppReviewView
 import com.inappreview.preferences.general.GeneralGeneralPrefsStoreImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,7 +33,11 @@ class MainActivityViewModel @Inject constructor(
 
     suspend fun saveToDataStore(dataToSave: String) {
         generalGeneralPrefsStoreImpl.saveString(dataToSave)
-        dataSaved.value = generalGeneralPrefsStoreImpl.getString().toString()
+
+        generalGeneralPrefsStoreImpl.getString().collect {
+            dataSaved.value = it
+        }
+
     }
 
 }

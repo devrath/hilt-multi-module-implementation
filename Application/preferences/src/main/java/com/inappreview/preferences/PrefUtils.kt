@@ -16,7 +16,7 @@ class PrefUtils(private val context: Context) {
    *
    * @return SharedPreferences
    */
-  fun getSharedPrefs(name: String) = context.getSharedPreferences(name, Context.MODE_PRIVATE)
+  fun getSharedPrefs(name: String): SharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE)
 
   /**
    * Return default shared preferences

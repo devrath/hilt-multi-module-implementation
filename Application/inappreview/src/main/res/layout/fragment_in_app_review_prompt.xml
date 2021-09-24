@@ -15,37 +15,18 @@
       android:layout_gravity="center"
       android:background="@drawable/ic_baseline_rate_review_24" />
 
-  <androidx.cardview.widget.CardView
-      android:id="@+id/leaveReviewCard"
-      style="@style/Button.Colored"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/leaveReview"
-        style="@style/Button.Text.Inverse"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackground"
-        android:gravity="center"
-        android:text="@string/inAppReviewRateNow"
-        android:textSize="@dimen/promptButtonTextSize" />
-  </androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:id="@+id/reviewLaterCard"
+  <Button
+      android:id="@+id/leaveReview"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:cardElevation="0dp">
 
-    <TextView
-        android:id="@+id/reviewLater"
-        style="@style/Button.Text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackground"
-        android:gravity="center"
-        android:text="@string/inAppReviewRateLater"
-        android:textSize="@dimen/promptButtonTextSize" />
-  </androidx.cardview.widget.CardView>
+      android:text="@string/inAppReviewRateNow" />
+
+  <Button
+      android:id="@+id/reviewLater"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/inAppReviewRateLater" />
+
+
 </LinearLayout>

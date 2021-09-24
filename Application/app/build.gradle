@@ -60,4 +60,7 @@ dependencies {
     // Play core
     implementation "com.google.android.play:core:${versions.playCore}"
     implementation "com.google.android.play:core-ktx:${versions.playCoreKtx}"
+
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:${versions.datastorePreferences}"
 }

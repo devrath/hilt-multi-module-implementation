@@ -24,6 +24,7 @@ import androidx.lifecycle.Lifecycle
 
 import androidx.annotation.NonNull
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.launch
 
 
@@ -34,7 +35,7 @@ import kotlinx.coroutines.launch
  * rate the app or if they asked to rate it later and enough time passed (a week).
  * */
 @AndroidEntryPoint
-class InAppReviewPromptDialog : DialogFragment(), CoroutineScope {
+class InAppReviewPromptDialog : BottomSheetDialogFragment(), CoroutineScope {
 
   private val job = Job()
   override val coroutineContext: CoroutineContext
@@ -102,10 +103,10 @@ class InAppReviewPromptDialog : DialogFragment(), CoroutineScope {
     val back = ColorDrawable(Color.TRANSPARENT)
     dialog?.window?.setBackgroundDrawable(back)
 
-    dialog?.window?.setLayout(
+    /*dialog?.window?.setLayout(
       resources.getDimensionPixelSize(R.dimen.ratePromptWidth),
       resources.getDimensionPixelSize(R.dimen.ratePromptHeight)
-    )
+    )*/
   }
 
   /**

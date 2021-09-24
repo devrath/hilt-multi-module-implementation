@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:id="@+id/inAppReviewPromptRoot"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:gravity="center"
-  android:background="@android:color/white"
-  android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inAppReviewPromptRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
-  <ImageView
+  <com.airbnb.lottie.LottieAnimationView
       android:id="@+id/imageView"
       android:layout_width="@dimen/img_parm"
       android:layout_height="@dimen/img_parm"
       android:layout_gravity="center"
-      android:background="@drawable/ic_baseline_rate_review_24" />
+      app:lottie_rawRes="@raw/heart"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"/>
 
   <Button
       android:id="@+id/leaveReview"

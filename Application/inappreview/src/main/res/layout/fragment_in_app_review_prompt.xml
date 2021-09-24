@@ -21,12 +21,14 @@
       android:id="@+id/leaveReview"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      style="@style/BottomSheetButtonStyle"
       android:text="@string/inAppReviewRateNow" />
 
   <Button
       android:id="@+id/reviewLater"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      style="@style/BottomSheetButtonStyle"
       android:text="@string/inAppReviewRateLater" />
 
 </LinearLayout>

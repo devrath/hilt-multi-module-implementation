@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!-- In-app-review Module specific strings -->
   <string name="inAppReviewRateLater">Not now</string>
   <string name="inAppReviewRateNow">Leave a review</string>
   <string name="inAppReviewMessage">Next, take a moment and rate your experience with the app.</string>

@@ -2,9 +2,14 @@ package com.inappreview.code
 
 import androidx.lifecycle.ViewModel
 import com.inappreview.InAppReviewView
+import com.inappreview.preferences.general.GeneralGeneralPrefsStoreImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainActivityViewModel : ViewModel() {
+@HiltViewModel
+class MainActivityViewModel @Inject constructor(
+    private val generalGeneralPrefsStoreImpl : GeneralGeneralPrefsStoreImpl
+): ViewModel() {
 
     private lateinit var inAppReviewView: InAppReviewView
 
@@ -20,6 +25,10 @@ class MainActivityViewModel : ViewModel() {
      * */
     fun startReview() {
         inAppReviewView.showReviewFlow()
+    }
+
+    suspend fun saveToDataStore(dataToSave: String) {
+        generalGeneralPrefsStoreImpl.saveString(dataToSave)
     }
 
 }

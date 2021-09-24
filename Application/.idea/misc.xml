@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/include_rating_container.xml" value="0.1" />
         <entry key="inappreview/src/main/res/drawable/ic_baseline_rate_review_24.xml" value="0.1648148148148148" />
         <entry key="inappreview/src/main/res/drawable/rounded_background.xml" value="0.14444444444444443" />
         <entry key="inappreview/src/main/res/layout/fragment_in_app_review_prompt.xml" value="0.25" />

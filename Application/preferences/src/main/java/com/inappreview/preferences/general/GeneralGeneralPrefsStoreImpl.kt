@@ -1,10 +1,7 @@
 package com.inappreview.preferences.general
 
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.*
 import com.inappreview.preferences.Constants.STORE_NAME
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -16,20 +13,20 @@ class GeneralGeneralPrefsStoreImpl  @Inject constructor(
 ): GeneralPrefsStore {
 
     companion object {
-        val NIGHT_MODE_KEY = booleanPreferencesKey(STORE_NAME)
+        val strKeyToSave = stringPreferencesKey(STORE_NAME)
     }
 
-    override fun isNightMode() = datastore.data.catch { exception ->
+    override fun getString() = datastore.data.catch { exception ->
         if (exception is IOException){
             emit(emptyPreferences())
         }else{
             throw exception
         }
-    }.map { it[NIGHT_MODE_KEY] ?: false }
+    }.map { it[strKeyToSave] ?: "" }
 
-    override suspend fun toogleNightMode() {
+    override suspend fun saveString(strToSave:String) {
         datastore.edit {
-            it[NIGHT_MODE_KEY] = !(it[NIGHT_MODE_KEY] ?: false)
+            it[strKeyToSave] = strToSave
         }
     }
 
